@@ -1,0 +1,3 @@
+[submodule "vendor/hooks"]
+	path = vendor/hooks
+	url = git@github.com:fellipebrito/hooks.git
