@@ -1,10 +1,6 @@
 require 'net/http'
 require 'json'
 
-TEAM    = '##YOUR_TEAM##'
-TOKEN   = '##YOUR_TOKEN##'
-URL     = URI("https://#{TEAM}.slack.com/services/hooks/incoming-webhook?token=#{TOKEN}")
-
 class Slack
   def message channel, text
     {
@@ -20,11 +16,9 @@ class Slack
   end
 end
 
-# Slack.new.post '##CHANNEL_NAME##', 'test'
-
 class Pugfy
-  def pugfy
-    Slack.new.post '##CHANNEL_NAME##', random_pug
+  def pugfy channel
+    Slack.new.post channel, random_pug
   end
 
   def random_pug
@@ -35,5 +29,3 @@ class Pugfy
     result['pug']
   end
 end
-
-Pugfy.new.pugfy
