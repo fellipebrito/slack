@@ -1,0 +1,16 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
+    multi_xml (0.5.5)
+    slack-poster (0.0.6)
+      httparty (~> 0.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  slack-poster
