@@ -11,6 +11,6 @@ TOKEN   = settings['slack']['token']
 URL     = URI("https://#{TEAM}.slack.com/services/hooks/incoming-webhook?token=#{TOKEN}")
 
 # post '/pugfy' do
-get '/pugfy' do
+post '/' do
   Pugfy.new.pugfy '#shawarma_joint'
 end
