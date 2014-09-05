@@ -1,8 +1,11 @@
-require 'sinatra'
 require 'yaml'
+require 'dotenv' unless ENV['RACK_ENV'] == 'production'
+require 'sinatra'
 require './post.rb'
 
-settings = YAML.load File.read 'config/settings.yml'
+Dotenv.load unless ENV['RACK_ENV'] == 'production'
+
+settings = YAML.load ERB.new(File.read 'config/settings.yml').result
 TEAM    = settings['slack']['team']
 TOKEN   = settings['slack']['token']
 URL     = URI("https://#{TEAM}.slack.com/services/hooks/incoming-webhook?token=#{TOKEN}")

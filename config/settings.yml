@@ -1,0 +1,3 @@
+slack:
+  team: <%= ENV['TEAM'] %>
+  token: <%= ENV['TOKEN'] %>
