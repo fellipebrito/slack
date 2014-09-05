@@ -12,5 +12,15 @@ URL     = URI("https://#{TEAM}.slack.com/services/hooks/incoming-webhook?token=#
 
 # post '/pugfy' do
 post '/' do
-  Pugfy.new.pugfy '#shawarma_joint'
+  # All Params
+  # token=r90MABUCUMiX0PSYPfi2xZqC
+  # team_id=T0001
+  # channel_id=C2147483705
+  # channel_name=test
+  # user_id=U2147483697
+  # user_name=Steve
+  # command=/weather
+  # text=94070
+
+  Slack.new.pugfy params[:channel_name]
 end
