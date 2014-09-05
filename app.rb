@@ -1,9 +1,9 @@
 require 'yaml'
-require 'dotenv'
+require 'dotenv' unless ENV['RACK_ENV'] == 'production'
 require 'sinatra'
 require './post.rb'
 
-Dotenv.load
+Dotenv.load unless ENV['RACK_ENV'] == 'production'
 
 settings = YAML.load ERB.new(File.read 'config/settings.yml').result
 TEAM    = settings['slack']['team']
